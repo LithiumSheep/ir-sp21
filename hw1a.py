@@ -45,7 +45,7 @@ class EOSClassifier:
             left_reliable,
             right_reliable,
             num_spaces,
-            1 if word_m1 in self.abbrevs else 0
+            1 if word_m1 in self.abbrevs else 0,
 
             # ==========TODO==========
             # Make a note of the score you'll get with
@@ -58,8 +58,27 @@ class EOSClassifier:
             # We've given you some features you might want to experiment with below.
             # You should be able to quickly get a score above 0.95!
 
-            # len(word_m1),
-            # 1 if word_p1.isupper() else 0
+            len(word_m1),
+            1 if word_p1.isupper() else 0,
+
+            # titles tend not to end a sentence.  e.g. Dr. Wright
+            1 if word_m1 in self.titles else 0,
+
+            # sentence_internal almost never end a sentence.  e.g. Bush vs. Gore
+
+            # capitalized unlikely_proper_nouns tend to indicate end of a sentence
+
+            # only 2 lines where a new sentence does not start with an upper-case word
+            # search using `awk '$5~/^.$/ && `
+            # regex < sent.train | grep '^EOS' | more
+
+            # Lots of function words indicate start of sentence.  E.g The, Then, Thus, If, etc.
+
+            # Think about things like section titles.  Part D. adfjadf
+
+            # generalizations like
+            # mathematical terms "function", "graph", "polynomial" can indicate single letters as uses of variables
+            # wordnet can give word lists organized by categories
         ]
 
         return features
