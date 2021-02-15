@@ -1,0 +1,14 @@
+
+
+In classifying EOS or NEOS, the biggest gains from the baseline of 0.897 was 
+the realization that the provided word lists were all lower-case, and so checking
+using statements like 
+
+```
+1 if word_m1.lower() in self.abbrevs else 0
+```
+
+produced the greatest increase in accuracy.  
+
+For word lists "abbrevs", "titles", "sentence_internal", and "timeterms", checking
+if `word_m1` existed in them tended to indicate that the period was NEOS

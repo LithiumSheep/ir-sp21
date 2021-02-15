@@ -45,8 +45,7 @@ class EOSClassifier:
             left_reliable,
             right_reliable,
             num_spaces,
-            1 if word_m1.lower() in self.abbrevs else 0,
-
+            
             # ==========TODO==========
             # Make a note of the score you'll get with
             # only the features above (it should be around
@@ -68,6 +67,8 @@ class EOSClassifier:
             # only a few lines where a new sentence does not start with an upper-case word
             1 if word_p1[0].isupper() else 0,
 
+            1 if word_m1.lower() in self.abbrevs else 0,
+
             # titles tend not to end a sentence.  e.g. Dr. Wright
             1 if word_m1.lower() in self.titles else 0,
 
@@ -84,7 +85,7 @@ class EOSClassifier:
             # "a.m." and "p.m." checks
             1 if word_m1.lower() in ["a.m", "p.m"] else 0,
 
-            # numbers right after a period typically mean NOES
+            # numbers right after a period typically mean NEOS
             1 if word_p1.isnumeric() else 0,
 
             1 if word_p1 in [".", ")", "``"] else 0,
