@@ -83,8 +83,13 @@ class EOSClassifier:
             # timeterms tend to indicate that the period is an abbrev and therefore NEOS
             1 if word_m1.lower() in self.timeterms else 0,
 
+            # "a.m." and "p.m." ch
+            1 if word_m1.lower() in ["a.m", "p.m"] else 0,
+
             # numbers right after a period typically mean NOES
             1 if word_p1.isnumeric() else 0,
+
+            1 if word_p1 in [".", ")", "``"] else 0,
 
             # Think about things like section titles.  Part D. asdfasdf
 
