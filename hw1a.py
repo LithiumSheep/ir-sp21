@@ -59,11 +59,13 @@ class EOSClassifier:
             # You should be able to quickly get a score above 0.95!
 
             len(word_m1),
+            len(word_p1),
             1 if word_p1.isupper() else 0,
 
             1 if word_m1.isupper() else 0,
 
             # check if the first letter of the next word is capitalized
+            # only a few lines where a new sentence does not start with an upper-case word
             1 if word_p1[0].isupper() else 0,
 
             # titles tend not to end a sentence.  e.g. Dr. Wright
@@ -72,10 +74,6 @@ class EOSClassifier:
             # sentence_internal almost never end a sentence.  e.g. Bush vs. Gore
             1 if word_m1.lower() in self.sentence_internal else 0,
 
-            # only 2 lines where a new sentence does not start with an upper-case word
-            # search using `awk '$5~/^.$/ && `
-            # regex < sent.train | grep '^EOS' | more
-
             # Lots of function words indicate start of sentence.  E.g The, Then, Thus, If, etc.
             # capitalized unlikely_proper_nouns tend to indicate end of a sentence
             1 if word_p1.lower() in self.unlikely_proper_nouns else 0,
@@ -83,7 +81,7 @@ class EOSClassifier:
             # timeterms tend to indicate that the period is an abbrev and therefore NEOS
             1 if word_m1.lower() in self.timeterms else 0,
 
-            # "a.m." and "p.m." ch
+            # "a.m." and "p.m." checks
             1 if word_m1.lower() in ["a.m", "p.m"] else 0,
 
             # numbers right after a period typically mean NOES
