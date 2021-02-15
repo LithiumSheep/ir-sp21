@@ -60,13 +60,13 @@ class EOSClassifier:
             len(word_m1),
             len(word_p1),
             1 if word_p1.isupper() else 0,
-
             1 if word_m1.isupper() else 0,
 
             # check if the first letter of the next word is capitalized
             # only a few lines where a new sentence does not start with an upper-case word
             1 if word_p1[0].isupper() else 0,
 
+            # abbrevs tend not to end a sentence.  
             1 if word_m1.lower() in self.abbrevs else 0,
 
             # titles tend not to end a sentence.  e.g. Dr. Wright

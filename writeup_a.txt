@@ -1,14 +1,27 @@
 
 
-In classifying EOS or NEOS, the biggest gains from the baseline of 0.897 was 
-the realization that the provided word lists were all lower-case, and so checking
-using statements like 
+In classifying EOS or NEOS, the biggest gains from the baseline of 0.897 came from extending
+the suggested (commented) features given in the assignment as well as using the given 
+word lists.  
 
-```
-1 if word_m1.lower() in self.abbrevs else 0
-```
+Since `len(word_m1)` and `word_p1.isupper()` were suggested, adding `len(word_p1)` and 
+`word_m1.isupper()` seemed to make sense.  When adding these features, the accuracy 
+of the decision tree rose to about 0.948.
 
-produced the greatest increase in accuracy.  
+In the next feature, I checked whether or not the first character in the next word (word_p1)
+was capitalized.  Typically, if a period ends a sentence, the next word will have a capitalized
+first letter.  This isn't always the case, as in examples like "Dr. Smith" where abbrviations
+and proper nouns surround a period, but many sentences followed the rule above. Adding this feature
+further increased accuracy to about 0.958.
 
 For word lists "abbrevs", "titles", "sentence_internal", and "timeterms", checking
-if `word_m1` existed in them tended to indicate that the period was NEOS
+if `word_m1` exists in them tended to indicate that the period was NEOS while checking 
+if `word_p1` exists in "unlikely_proper_nouns" tended to indicate that the period
+is EOS.  These lists were extremely helpful, as including them increased the accuracy
+of the results to about 0.996.
+
+Finally, the last three features were some edge cases that I found after looking through 
+the errorfile.  Checking for the special words "a.m." and "p.m." brought the accuracy up 
+to about 0.997, checking if the entire next word (word_p1) is numeric brought the accuracy 
+to about 0.998, and finally, checking if the next word (word_p1) was another special character
+such as one of "[".", ")", "``"]" brought the accuracy to about 0.9984.
