@@ -61,7 +61,7 @@ class EOSClassifier:
             len(word_m1),
             1 if word_p1.isupper() else 0,
 
-            # check if the rhs word is upper-case
+            # check if the lhs word is upper-case
             1 if word_m1.isupper() else 0,
 
             # titles tend not to end a sentence.  e.g. Dr. Wright
@@ -78,10 +78,13 @@ class EOSClassifier:
             # capitalized unlikely_proper_nouns tend to indicate end of a sentence
             1 if word_p1.lower() in self.unlikely_proper_nouns else 0,
 
-            # timeterms tend to indicate that the period is an abbrev and therefore NOES
-            # 1 if word_m1 in self.timeterms else 0,
+            # timeterms tend to indicate that the period is an abbrev and therefore NEOS
+            1 if word_m1.lower() in self.timeterms else 0,
 
-            # Think about things like section titles.  Part D. adfjadf
+            # numbers right after a period typically mean NOES
+            1 if word_p1.isnumeric() else 0,
+
+            # Think about things like section titles.  Part D. asdfasdf
 
             # generalizations like
             # mathematical terms "function", "graph", "polynomial" can indicate single letters as uses of variables
