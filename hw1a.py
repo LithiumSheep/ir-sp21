@@ -61,12 +61,20 @@ class EOSClassifier:
             len(word_m1),
             1 if word_p1.isupper() else 0,
 
+            # check if the rhs word is upper-case
+            1 if word_m1.isupper() else 0,
+
             # titles tend not to end a sentence.  e.g. Dr. Wright
             1 if word_m1 in self.titles else 0,
 
             # sentence_internal almost never end a sentence.  e.g. Bush vs. Gore
+            1 if word_m1 in self.sentence_internal else 0,
 
             # capitalized unlikely_proper_nouns tend to indicate end of a sentence
+            1 if word_p1 in self.unlikely_proper_nouns else 0,
+
+            # timeterms tend to indicate that the period is an abbrev and therefore NOES
+            1 if word_m1 in self.timeterms else 0,
 
             # only 2 lines where a new sentence does not start with an upper-case word
             # search using `awk '$5~/^.$/ && `
