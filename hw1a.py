@@ -45,7 +45,7 @@ class EOSClassifier:
             left_reliable,
             right_reliable,
             num_spaces,
-            1 if word_m1 in self.abbrevs else 0,
+            1 if word_m1.lower() in self.abbrevs else 0,
 
             # ==========TODO==========
             # Make a note of the score you'll get with
@@ -65,10 +65,10 @@ class EOSClassifier:
             1 if word_m1.isupper() else 0,
 
             # titles tend not to end a sentence.  e.g. Dr. Wright
-            1 if word_m1 in self.titles else 0,
+            1 if word_m1.lower() in self.titles else 0,
 
             # sentence_internal almost never end a sentence.  e.g. Bush vs. Gore
-            # 1 if word_m1 in self.sentence_internal else 0,
+            1 if word_m1.lower() in self.sentence_internal else 0,
 
             # only 2 lines where a new sentence does not start with an upper-case word
             # search using `awk '$5~/^.$/ && `
@@ -76,7 +76,7 @@ class EOSClassifier:
 
             # Lots of function words indicate start of sentence.  E.g The, Then, Thus, If, etc.
             # capitalized unlikely_proper_nouns tend to indicate end of a sentence
-            # 1 if word_p1 in self.unlikely_proper_nouns else 0,
+            1 if word_p1.lower() in self.unlikely_proper_nouns else 0,
 
             # timeterms tend to indicate that the period is an abbrev and therefore NOES
             # 1 if word_m1 in self.timeterms else 0,
