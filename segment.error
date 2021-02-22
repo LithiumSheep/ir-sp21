@@ -1,8 +1,9 @@
 NNHEAD	PTEXT	Subject: WestPac, Frontier
 PTEXT	ITEM	4/30 through 5/7.  Hmmmm...is this yet another start-up airline which is
+PTEXT	ITEM	$5/hour than, say, uhh, TRAINING?  At a copmany that small the agents should
 PTEXT	NNHEAD	state Colorado Springs is located in.
 NNHEAD	PTEXT	In-reply-to: k-cuddeback@nwu.edu's message of Wed, 19 Apr 1995 01:21:11 -0500
-PTEXT	SIG	Concourse C at CVG, it still has room for 16 or so gates.
+PTEXT	NNHEAD	Concourse C at CVG, it still has room for 16 or so gates.
 PTEXT	NNHEAD	substantial (and growing) Comair presence there.
 QUOTED	GRAPHIC	 KC> NW          MSP, DTW                          NRT (Tokyo) MEM
 PTEXT	NNHEAD	the most flights per day from BOS.)
@@ -19,14 +20,15 @@ TABLE	ITEM	    747-400F			  890,000
 TABLE	ITEM	    "new large airplane"	  900,000
 NNHEAD	ADDRESS	Subject: Cumulative grades (updated)
 PTEXT	ITEM		Really?  My family is literally "forced" to take Philippine
-PTEXT	NNHEAD		Airlines because United Airline's flights to Manila are
+PTEXT	SIG		Airlines because United Airline's flights to Manila are
 PTEXT	ITEM		consistently packed.  Even back in the early 80's, my family
-PTEXT	ITEM		Yes they can.  747-400 have the longest range of any commercial
+PTEXT	NNHEAD		from Northwest'f flight attendants, or the "snobby-look" from
 PTEXT	ITEM		can fly direct from SFO to Tokyo's NRT.
 PTEXT	ITEM		Also realize that the US Domestic Travel Business is highly
 PTEXT	ITEM		airlines you've mentioned flies out of SFO.  I myself am not
 PTEXT	ITEM		familiar with Virgin Atlantic.  All I know about them is
 PTEXT	NNHEAD		that they fly 747's exclusively.
+SIG	PTEXT	  You learn things you never knew, you never knew.  ||
 SIG	GRAPHIC	                             -Pocahontas            ||  bashir@cats.ucsc.edu
 NNHEAD	PTEXT	Date: Fri, 28 Apr 1995 10:27:02 GMT
 QUOTED	PTEXT	In article <3mgrhs$rf3@kei.com>, awone@panix.com (Allen Wone) writes:
@@ -40,10 +42,11 @@ PTEXT	QUOTED	Losing a dollar on every seat but making it up on volume :-)
 QUOTED	NNHEAD	Albert Avery Vise (avise@netcom.com) wrote:
 ITEM	PTEXT	1. SJC-NRT has not required a load restriction or fuel stop for several
 ITEM	PTEXT	years. Even on a bad day.... The runway was extended and MDC worked out
-ITEM	HEADL	some of the range problems.
+ITEM	PTEXT	some of the range problems.
 ITEM	PTEXT	it as their economies grow and the rest of the world is still faltering.
 ITEM	PTEXT	were not allowed to pick up the authority in 1991. They also paid for
 ITEM	PTEXT	STL-LHR and ended up having to give it back (without a refund!) to TWA.
+ITEM	PTEXT	4. The traffic justified both routes, as did the community and civic
 ITEM	PTEXT	support (a trick learned from UAL's bid for ORD-NRT). With the amount of
 ITEM	PTEXT	high-tech and offshore manufacturing in both TN and NC, there was demand
 ITEM	PTEXT	and commitments to use the service. I didn't see that in DL's bid, aside
@@ -55,8 +58,8 @@ PTEXT	ADDRESS	*exclusively* a DC-9 fleet).
 NNHEAD	SIG	Subject: Re: B777 TEST FLIGHT, tonsils, and the CRJ
 QUOTED	NNHEAD	In article <k-cuddeback-2704951905580001@mac239.kellogg.nwu.edu>,
 QUOTED	NNHEAD	Kevin Cuddeback <k-cuddeback@nwu.edu> wrote:
+PTEXT	ITEM	flying at 10,000 feet.
 SIG	PTEXT	Grant Lynde
-NNHEAD	PTEXT	Subject: GSB! GSB! GSB!
 NNHEAD	PTEXT	Subject: Re: CALite dead and buried
 NNHEAD	QUOTED	Reply-To: alexandc10@aol.com (Alexandc10)
 PTEXT	ITEM	CO34 to any other carrier's connect service.  Additionally, CO SHOULD have

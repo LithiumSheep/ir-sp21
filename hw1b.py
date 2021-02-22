@@ -39,7 +39,7 @@ class SegmentClassifier:
             1 if ':' in words else 0,
 
             # and the number of ':' in a line
-            sum(1 if ':' else 0 for w in words),
+            # sum(1 if ':' else 0 for w in words),
 
             # different punctuations
             1 if ',' in words or '.' in words else 0,
