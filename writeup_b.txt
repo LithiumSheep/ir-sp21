@@ -1,0 +1,16 @@
+
+In classifying lines and segments of text, several challenges are apparent.  However, some simple 
+features were able to classify a decent amount of lines and segments.
+
+Simple features matching the classifiers described in 'standards' such as checking for the '>' character 
+and if a line starts with the '>' character for the QUOTED classifier seemed to work minus the introductory lines.
+
+Checking for the presence of the ':' character found many of the NNHEAD lines. Counting capitalized words worked 
+very well for finding HEADL lines.  Checking for numeric words was average at detecting ITEM or TABLE lines. 
+
+Finally, a set of features around detecting common punctuations such as '.', ',', and the tab character were identified
+to try and find PTEXT and to try to distinguish ITEM lines.  This was not very successful.   
+
+Overall on the test data, these features were able to classify lines and segments at around 90% accuracy.  It's very likely 
+that the simple features provided caused some level of over-fitting of the model.  Finding combinations of features may 
+improve the accuracy of the model.  

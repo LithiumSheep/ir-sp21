@@ -17,9 +17,36 @@ class SegmentClassifier:
             len(text),
             len(text.strip()),
             len(words),
+
+            # '>' seems to represent quoted text
             1 if '>' in words else 0,
-            # text.count(' '),
-            # sum(1 if w.isupper() else 0 for w in words)
+
+            # quoted text seems to always _start_ with '>'
+            1 if '>' in words[0] else 0,
+
+            # number of spaces
+            text.count(' '),
+
+            # number of capitalized words in line
+            sum(1 if w.isupper() else 0 for w in words),
+
+            # number of numeric words in line
+            sum(1 if w.isnumeric() else 0 for w in words),
+
+            1 if any(c.isdigit() for c in words[0]) else 0,
+            
+            # checking for ':'
+            1 if ':' in words else 0,
+
+            # and the number of ':' in a line
+            sum(1 if ':' else 0 for w in words),
+
+            # different punctuations
+            1 if ',' in words or '.' in words else 0,
+
+            1 if '\t' in words else 0,
+
+            1 if '--' in words else 0,
         ]
         return features
 
